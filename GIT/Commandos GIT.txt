@@ -1,0 +1,32 @@
+Commandos GIT
+
+Git Init = iniciliaza repositorios locales
+
+Git Status = nos permite ver cambios que se hayan realizado, y ver que hace falta "commitiar"
+
+Git remote = añadir al remoto o comandos para ver la version bajo lo que estamos vinculado
+
+Git Diff = diferencia ante el commit anterior y lo que estamos haciendo ahora
+
+Git push = palabra clave para empujar
+
+Git Pull = palabra clave para  traer
+
+Git chekout = saltar entre ramas y versiones
+
+Git Log = permite ver el historial
+
+Git global --config = para el mail, y el nombre de usuario, entre otros, entre ellos:
+ 
+ Git global --config user.name "WALT" = para ponerle un nombre de usuario al master / repositorio
+
+ Git global --config user.email "wjterranova@gmail.com" = para ponerle una cuenta de mail al master / repositorio
+
+ Git global --config -l = para ver la configuracion global
+
+ Git global --config 
+
+Git --help = explica lo que hace cada uno de los comandos
+
+
+Fuente: https://git-scm.com/docs
