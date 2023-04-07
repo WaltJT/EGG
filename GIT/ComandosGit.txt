@@ -1,4 +1,4 @@
-Commandos GIT
+pusCommandos GIT
 
 *IMPORTANTE: Se recomienda siempre que se realice algun cambio en Git bash, chequear con ls, para asi poder ver que los cambios hayan impactado de la manera esperada.
 
@@ -62,14 +62,7 @@ git merge = Sirve para poder traer informacion desde otra rama, a la rama en la 
 
 
 
-
-
-
-
-
 git pull = palabra clave para traer la informacion almacenada en Git.
-
-git chekout = saltar entre ramas y versiones
 
 git global --config = para el mail, y el nombre de usuario, entre otros, entre ellos:
  
@@ -88,3 +81,19 @@ code . = sirve para abrir vs code desde la consola de Git.
 
 
 Fuente: https://git-scm.com/docs
+
+
+
+
+
+Correccion de error en GIT:
+
+! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/...
+Encontré una forma de "corregirlo":
+
+git pull
+git branch --set-upstream-to=origin/main main
+git pull --allow-unrelated-histories
+git push -u origin main
+Con la cual ya se sube.
