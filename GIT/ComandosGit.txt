@@ -52,7 +52,7 @@ RAMAS EN GIT:
 
 git branch = Nos permite ver en que rama de nuestro repositorio estamos ubicado (antes de crear cualquier rama, es muy recomendable revisar en que rama estamos ubicados).
 
-git branch = Nos permite crear ramas dentro de nuestro repositorio, de la siguiente manera git branch seguido-del-nombre-de-la-rama.
+git checkout -b = Nos permite crear ramas dentro de nuestro repositorio, de la siguiente manera git checkout -b seguido-del-nombre-de-la-rama.
 
 cat = Este comando nos sirve para ver el contenido del archivo deseado (ejemplo= cat archivo2.txt).
 
