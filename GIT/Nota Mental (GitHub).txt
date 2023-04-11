@@ -1,0 +1,1 @@
+Si esta el programa de GitHub instalado en el PC, se actualiza desde alli los cambios de GIT a GITHUB, realizando un commit, y ejecutando un PUSH desde el mismo programa. 
