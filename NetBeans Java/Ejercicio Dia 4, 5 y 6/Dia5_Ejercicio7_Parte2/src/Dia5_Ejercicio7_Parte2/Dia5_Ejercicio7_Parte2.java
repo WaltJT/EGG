@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dia5_Ejercicio7;
+package Dia5_Ejercicio7_Parte2;
 
 /*
 EJERCICIO7
@@ -27,7 +27,7 @@ funciones de Java Substring(), Length(), equals().
 
 import java.util.Scanner;
 
-public class Dia5_Ejercicio7 {
+public class Dia5_Ejercicio7_Parte2 {
 
     public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -52,9 +52,21 @@ public class Dia5_Ejercicio7 {
                   break;
         
               }
-                        
-              if (letter.length() == 5 && letter.charAt(0) == 'X' 
-                && letter.charAt(4) == 'O') {
+              
+              if (letter.length() <= 5 && letter.substring(0,1).equalsIgnoreCase("x")&& letter.substring(letter.length()-1,letter.length()).equalsIgnoreCase("o")){
+                  
+                contarCorrectas++;
+                System.out.println("correcto");             
+               
+              }
+                            
+              else {
+                  
+                contarIncorrectas++;
+            
+               }
+              
+             /*if (letter.length() == 5 && letter.substring(0,4).equalsIgnoreCase("o")){
                   
                 contarCorrectas++;
                 
@@ -63,19 +75,17 @@ public class Dia5_Ejercicio7 {
                else{
                           
                 contarIncorrectas++;
-            
-               }
+                
+               }*/
             
         }
-    
+//        int Correctas = contarCorrectas++/2;
+//        int Incorrectas = contarIncorrectas++/2;
+        
         System.out.println("Informe:");
         System.out.println("Lecturas correctas: " + contarCorrectas);
         System.out.println("Lecturas incorrectas: " + contarIncorrectas);
         
+        }
+
     }
-
-}    
-    
-// substring(0, 1).equalsIgnoreCase("a")
-
-// letter.charAt(0) == 'X') {
