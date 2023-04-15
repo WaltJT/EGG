@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dia8_Ejercicio1;
+package Dia7_Ejercicio1_Final;
 
 /*
 Ejercicio1
@@ -17,7 +17,7 @@ en el main.
 
 import java.util.Scanner;
 
-public class Dia8_Ejercicio1 {
+public class Dia7_Ejercicio1_Final {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
