@@ -76,6 +76,4 @@ public class Dia5_Ejercicio7 {
 
 }    
     
-// substring(0, 1).equalsIgnoreCase("a")
 
-// letter.charAt(0) == 'X') {
