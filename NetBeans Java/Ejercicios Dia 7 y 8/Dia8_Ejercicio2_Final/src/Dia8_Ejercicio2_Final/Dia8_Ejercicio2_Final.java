@@ -31,13 +31,16 @@ public class Dia8_Ejercicio2_Final {
         input.nextLine();
         
         for (int i = 0; i < n && continuar.equalsIgnoreCase("Sí"); i++) {
-            ingresarPersona(input);
+        ingresarPersona(input);
+        
             System.out.println("¿Desea ingresar otra persona? (Sí/No)");
             continuar = input.nextLine();
+        
         }
     }
     
     public static void ingresarPersona(Scanner input) {
+        
         System.out.println("Ingrese el nombre de la persona:");
         String nombre = input.nextLine();
         
@@ -46,9 +49,15 @@ public class Dia8_Ejercicio2_Final {
         input.nextLine();
         
         if (edad >= 18) {
+            
             System.out.println(nombre + " es mayor de edad.");
+        
         } else {
+        
             System.out.println(nombre + " es menor de edad.");
+        
         }
+    
     }
+
 }
