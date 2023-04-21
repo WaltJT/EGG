@@ -17,7 +17,6 @@ por columnas (o viceversa).
 
  */
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Dia10_Ejercicio5_Final {
