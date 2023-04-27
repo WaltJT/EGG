@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Dia17_Ejercicio4_POO;
 
 import ENTIDAD.Rectangulo;
@@ -22,6 +23,7 @@ correspondientes.
 Superficie = base * altura / Perímetro = (base + altura) * 2.
 
  */
+
 public class Dia17_Ejercicio4_POO {
 
     public static void main(String[] args) {

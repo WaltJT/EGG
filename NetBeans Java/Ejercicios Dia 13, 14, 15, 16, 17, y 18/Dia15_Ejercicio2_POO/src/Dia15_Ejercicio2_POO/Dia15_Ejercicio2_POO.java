@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Dia15_Ejercicio2_POO;
 
 import ENTIDAD.Circunferencia;
@@ -20,6 +21,7 @@ D- Método area(): para calcular el área de la circunferencia (Area=〖π*radio
 E- Método perimetro(): para calcular el perímetro (Perimetro=2*π*radio).
 
  */
+
 public class Dia15_Ejercicio2_POO {
 
     public static void main(String[] args) {

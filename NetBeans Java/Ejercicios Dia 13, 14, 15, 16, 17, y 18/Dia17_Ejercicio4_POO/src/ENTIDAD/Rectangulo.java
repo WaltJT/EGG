@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package ENTIDAD;
 
 import java.util.Scanner;
@@ -22,9 +23,9 @@ public class Rectangulo {
     public Rectangulo() {
     
         Scanner scanner = new Scanner (System.in);
-        System.out.print("Por favor introduzca un valor para la base del rectangulo: ");
+        System.out.println("Por favor introduzca un valor para la base del rectangulo: ");
         this.base = scanner.nextDouble();
-        System.out.print("Por favor introduzca un valor para la altura del rectangulo: ");
+        System.out.println("Por favor introduzca un valor para la altura del rectangulo: ");
         this.altura  = scanner.nextDouble();
     
     }
@@ -66,22 +67,29 @@ public class Rectangulo {
     }
 
     public void dibujar() {
+
+        System.out.println("");
+        
         for(int i = 0; i < altura; i++) {
             for(int j = 0; j < base; j++) {
                 System.out.print("*");
+                
             }
+           
             System.out.println();
     
         }
 
+        System.out.println("");
+        
     }
 
-    public void setAltura() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setBase() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public void setAltura() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    public void setBase() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
 }
