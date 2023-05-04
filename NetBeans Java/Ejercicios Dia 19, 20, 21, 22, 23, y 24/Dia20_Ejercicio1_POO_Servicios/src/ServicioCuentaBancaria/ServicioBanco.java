@@ -37,76 +37,83 @@ F- Método consultarDatos: permitirá mostrar todos los datos de la cuenta.
 
 public class ServicioBanco {
 
-    public ServicioBanco(String Nombre, String Apellido, int numerodecuenta, long SaldoActual, int DNICliente) {
-    }
+    public void crearCuenta() {
+   CuentaBancaria cuenta = new CuentaBancaria();
    
-    Scanner scanner = new Scanner(System.in).useDelimiter("\n");
-
-    public ServicioBanco() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    public ServicioBanco CrearCuentaBanco (){
-        
-        long SaldoActual = 6515487932L;
-        
-        System.out.println("Por favor ingrese su nombre/s: ");
-        String Nombre = scanner.next();
-
-        System.out.println("Por favor ingrese su apellido: ");
-        String Apellido = scanner.next();
-        
-        System.out.println("Por favor ingrese su numero de cuenta: ");
-        int numerodecuenta = scanner.nextInt();
-
-        System.out.println("Por favor ingrese su numero de DNI: ");
-        long DNICliente = scanner.nextInt();
-        
-        return new ServicioBanco(Nombre, Apellido, numerodecuenta, SaldoActual, (int) DNICliente);
-        
-    }
-
-    public void ExtraccionRapida() {
-
-    }
-
-    public void ExtraccionRapida(CuentaBancaria cuenta, double cantidadRetirar) {
-    
-    }
-    
-    public void IngresarSaldo(int SaldoActual){
-    
-        System.out.println("Ingrese la cantidad de dinero que desea ingresar: ");
-        int IngresarSaldo = scanner.nextInt();
-        SaldoActual += IngresarSaldo;
-    
-    }
-    
-    public void RetirarSaldo(int SaldoActual){
-        System.out.println("Ingrese la cantidad de dinero que desea retirar:");
-        int retirarSaldo = scanner.nextInt();
-        
-        if (retirarSaldo > SaldoActual){
-            retirarSaldo = SaldoActual;
-        }
-        SaldoActual -= retirarSaldo;
-    }
-    
-    
-    public void ExtraccionRapida(int SaldoActual){
-        System.out.println("Ingrese la cantidad de dinero que desea retirar de manera rápida:");
-        int RetirarSaldo = scanner.nextInt();
-        
-        if (RetirarSaldo <= SaldoActual*0.20){
-            SaldoActual -= RetirarSaldo;
-        } else if (RetirarSaldo > SaldoActual*0.20){
-            System.out.println("No se puede retirar tal cantidad de dinero en el modo Extracción Rápida");
-        }
-    }
-
+   Scanner sc = new Scanner (System.in).useDelimiter("\n");
    
-}
+        System.out.print("Ingrese el número de cuenta: ");
+        cuenta.setNumeroCuenta(sc.nextInt());
+       
+        System.out.print("Ingrese el DNI del cliente: ");
+        cuenta.setDniCliente(sc.nextLong());
         
+        System.out.print("Ingrese el saldo actual: ");
+        cuenta.setSaldoActual(sc.nextInt()); }
+
+    public class CuentaBancariaServicio {
+
+    Scanner sc = new Scanner(System.in).useDelimiter("\n");
+
+    }
+
+    public void ingresar(CuentaBancaria cuenta, double cantidad) {
+    
+        cuenta.setSaldoActual((int) (cuenta.getSaldoActual() + cantidad));
+        System.out.println("Se han ingresado " + cantidad + " euros a la cuenta.");
+    
+    }
+
+    public void retirar(CuentaBancaria cuenta, double cantidad) {
+        
+        if (cuenta.getSaldoActual() >= cantidad) {
+            cuenta.setSaldoActual((int) (cuenta.getSaldoActual() - cantidad));
+            System.out.println("Se han retirado " + cantidad + " euros de la cuenta.");
+        
+        } else {
+        
+            System.out.println("No hay suficiente saldo para retirar esa cantidad.");
+            cantidad = cuenta.getSaldoActual();
+            cuenta.setSaldoActual(0);
+            System.out.println("Se han retirado " + cantidad + " euros de la cuenta.");
+    
+        }
+    
+    }
+
+    public void extraccionRapida(CuentaBancaria cuenta) {
+        
+        Scanner sc = new Scanner(System.in).useDelimiter("\n");
+        
+        double limite = cuenta.getSaldoActual() * 0.2;
+        System.out.print("¿Cuánto dinero desea retirar? (Máximo " + limite + " euros): ");
+        
+        double cantidad = sc.nextDouble();
+        
+        if (cantidad > limite) {
+            System.out.println("No se puede retirar esa cantidad. El límite es de " + limite + " euros.");
+        
+        } else {
+            retirar(cuenta, cantidad);
+    
+        }
+    
+    }
+
+    public void consultarSaldo(CuentaBancaria cuenta) {
+        System.out.println("El saldo actual de la cuenta es de " + cuenta.getSaldoActual() + " euros.");
+    
+    }
+
+    public void consultarDatos(CuentaBancaria cuenta) {
+        System.out.println("Número de cuenta: " + cuenta.getNumeroCuenta());
+        System.out.println("DNI del cliente: " + cuenta.getDniCliente());
+        System.out.println("Saldo actual: " + cuenta.getSaldoActual() + " euros.");
+ 
+    }
+
+  }
+
 
     
 

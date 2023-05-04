@@ -37,130 +37,41 @@ F- Método consultarDatos: permitirá mostrar todos los datos de la cuenta.
 
 public class CuentaBancaria {
 
-    Scanner scanner = new Scanner(System.in).useDelimiter("\n");
-    
-    public String Nombre;
-    public String Apellido;
-    public int numerodecuenta;
-    public long DNICliente;
-    public long SaldoActual;
-    public double IngresarSaldo;
-    public double RetirarSaldo;
-    public double ExtraccionRapida;
-    public double consultarSaldo;
-    public double consultarDatos;
+    private int numeroCuenta;
+    private long dniCliente;
+    private int saldoActual;
     
     public CuentaBancaria() {
-    
-    }
-
-    public CuentaBancaria(int numerodecuenta, int DNICliente, int SaldoActual, double IngresarSaldo, double RetirarSaldo, double ExtraccionRapida, double consultarSaldo, double consultarDatos, String Nombre, String Apellido) {
-    
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.numerodecuenta = numerodecuenta;
-        this.DNICliente = DNICliente;
-        this.SaldoActual = SaldoActual;
-        this.IngresarSaldo = IngresarSaldo;
-        this.RetirarSaldo = RetirarSaldo;
-        this.ExtraccionRapida = ExtraccionRapida;
-        this.consultarSaldo = consultarSaldo;
-        this.consultarDatos = consultarDatos;
         
     }
-
-    public CuentaBancaria(int numeroCuenta, long dniCliente, long saldoActual) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public String getApellido() {
-        return Apellido;
+    
+    public CuentaBancaria(int numeroCuenta, long dniCliente, int saldoActual) {
+        this.numeroCuenta = numeroCuenta;
+        this.dniCliente = dniCliente;
+        this.saldoActual = saldoActual;
     }
     
-    public int getNumerodecuenta() {
-        return numerodecuenta;
+    public int getNumeroCuenta() {
+        return numeroCuenta;
     }
-
-    public long getDNICliente() {
-        return DNICliente;
+    
+    public void setNumeroCuenta(int numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
     }
-
-    public long getSaldoActual() {
-        return SaldoActual;
+    
+    public long getDniCliente() {
+        return dniCliente;
     }
-
-    public double getIngresarSaldo() {
-        return IngresarSaldo;
+    
+    public void setDniCliente(long dniCliente) {
+        this.dniCliente = dniCliente;
     }
-
-    public double getRetirar() {
-        return RetirarSaldo;
+    
+    public double getSaldoActual() {
+        return saldoActual;
     }
-
-    public double getExtraccionRapida() {
-        return ExtraccionRapida;
+    
+    public void setSaldoActual(int saldoActual) {
+        this.saldoActual = saldoActual;
     }
-
-    public double getConsultarSaldo() {
-        return consultarSaldo;
-    }
-
-    public double getConsultarDatos() {
-        return consultarDatos;
-    }
-
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
-    }
-           
-    public void setNumerodecuenta(int numerodecuenta) {
-        this.numerodecuenta = numerodecuenta;
-    }
-
-    public void setDNICliente(int DNICliente) {
-        this.DNICliente = DNICliente;
-    }
-
-    public void setSaldoActual(int SaldoActual) {
-        this.SaldoActual = SaldoActual;
-    }
-
-    public void setIngresar(double IngresarSaldo) {
-        this.IngresarSaldo = IngresarSaldo;
-    }
-
-    public void setRetirar(double RetirarSaldo) {
-        this.RetirarSaldo = RetirarSaldo;
-    }
-
-    public void setExtraccionRapida(double ExtraccionRapida) {
-        this.ExtraccionRapida = ExtraccionRapida;
-    }
-
-    public void setConsultarSaldo(double consultarSaldo) {
-        this.consultarSaldo = consultarSaldo;
-    }
-
-    public void setConsultarDatos(double consultarDatos) {
-        this.consultarDatos = consultarDatos;
-    }
-
-    @Override
-    public String toString() {
-        return "CuentaBancaria{" + "scanner =" + scanner + ", Nombre =" + Nombre + ", Apellido =" + Apellido + ", numerodecuenta=" + numerodecuenta + ", DNICliente =" + DNICliente + ", SaldoActual =" + SaldoActual + ", IngresarSaldo =" + IngresarSaldo + ", RetirarSaldo =" + RetirarSaldo + ", ExtraccionRapida =" + ExtraccionRapida + ", consultarSaldo =" + consultarSaldo + ", consultarDatos =" + consultarDatos + '}';
-    }
-
-    public void CrearCuentaBanco(ServicioBanco sb1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
 }

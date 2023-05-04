@@ -40,16 +40,22 @@ public class Dia20_Ejercicio1_POO_Servicios {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
- 
-        ServicioBanco sb1 = new ServicioBanco();
-        
-        CuentaBancaria cb = new CuentaBancaria();
-        
-        cb.CrearCuentaBanco(sb1);
-        
-       
-}
-    
-}
+        ServicioBanco servicio = new ServicioBanco();
+        CuentaBancaria cuenta = new CuentaBancaria();
 
+        servicio.crearCuenta();
+
+        servicio.ingresar(cuenta, 10000000);
+        servicio.consultarSaldo(cuenta);
+
+        servicio.retirar(cuenta, 500);
+        servicio.consultarSaldo(cuenta);
+
+        servicio.extraccionRapida(cuenta);
+        servicio.consultarSaldo(cuenta);
+
+        servicio.consultarDatos(cuenta);
+
+    }
+
+}
