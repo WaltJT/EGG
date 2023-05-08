@@ -5,9 +5,6 @@
  */
 package ENTIDAD;
 
-import ServicioCuentaBancaria.ServicioBanco;
-import java.util.Scanner;
-
 /**
 
 EJERCICIO 1 POO Servicios.
