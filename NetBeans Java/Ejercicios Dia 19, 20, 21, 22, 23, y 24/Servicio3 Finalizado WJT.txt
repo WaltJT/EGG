@@ -46,17 +46,10 @@ métodos adicionales.
 
 */
 
-public class ServicioPersona {
+public class ServicioPersona { 	/* Casi terminado como lo pide el ejercicio (falta la parte de los porcentajes)*/
     
     Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
-    int mayorEdad = 0;
-    
-    int bajoPeso = 0;
-    int pesoIdeal = 0;
-    int sobrePeso = 0;
-    
-    
     public Persona crearPersona() {
         
         System.out.println("Ingrese el nombre de la persona: ");
@@ -87,7 +80,103 @@ public class ServicioPersona {
         
         System.out.println("El peso de la persona es: "+ peso + " Kg");
         
-            if ("m".equals(sexo.toLowerCase())) {
+        while (sexo.equals("M") || sexo.equals("F")){  
+        System.out.println("Ingrese el sexo");
+        System.out.println("M - Masculino");
+        System.out.println("F - Femenino");
+            
+        sexo = scanner.nextLine().toUpperCase();
+        
+        }
+        
+        return new Persona (nombre, apellido, edad, estatura, peso);
+        
+    }
+        
+    public int calcularIMC (Persona persona){
+        
+        double IMC = persona.getPeso() / (Math.pow(persona.getEdad(), 2));
+        
+        System.out.println("El indice de masa corporal es " + (int)IMC);
+        
+        if (IMC >= 20 && IMC <= 25){
+            
+        System.out.println("Estas en tu peso ideal.");
+        
+        }else if (IMC <=20) {
+   
+        System.out.println("Estas por debajo de tu peso ideal (¡Cuidado!, puede que tenga desnutrición).");
+        
+        }else{    
+        
+        System.out.println("Estas por encima de tu peso ideal (¡Cuidado!, puede que tenga sobrepeso).");    
+            
+        }
+        
+        return (int)IMC;
+        
+    }
+        
+        public boolean esMayorDeEdad(Persona persona){
+        
+            return persona.getEdad()>= 18;
+        
+        }
+    
+-------------------------------------------------------------------------------------------------------------------
+
+
+    public void actualizarPersona(Persona p) { /*Realizado por WJT, finalizado sin terminar los metodos adiciones para finalizar los porcentajes, y sin separar por metodos para IMC y para boolean de mayo menos de edad */
+        
+        System.out.println("Ingrese el nuevo nombre de la persona: ");
+        String nombre = scanner.next();
+
+        System.out.println("Ingrese el nuevo apellido de la persona: ");
+        String apellido = scanner.next();
+
+        System.out.println("Ingrese la nueva edad de la persona: ");
+        int edad = scanner.nextInt();
+
+        System.out.println("Ingrese la nueva estatura de la persona: ");
+        double estatura = scanner.nextDouble();
+
+        System.out.println("Ingrese el nuevo peso de la persona: ");
+        int peso = scanner.nextInt();
+        
+        System.out.println("Ingrese su sexo por favor; M para masculino, y F para feminino: ");
+        String sexo = scanner.next();
+        
+        
+        double IMC = peso / (Math.pow(estatura, 2));
+        
+        System.out.println("El indice de masa corporal es " + (int)IMC);
+        
+        if (IMC >= 20 && IMC <= 25){
+            
+        System.out.println("Estas en tu peso ideal.");
+        
+        }else if (IMC <=20) {
+   
+        System.out.println("Estas por debajo de tu peso ideal (¡Cuidado!, puede que tenga desnutrición).");
+        
+        }else{    
+        
+        System.out.println("Estas por encima de tu peso ideal (¡Cuidado!, puede que tenga sobrepeso).");    
+            
+        }
+        
+        if (edad >= 18){
+    
+            System.out.println("La persona es mayor de edad.");
+    
+        }else{
+            
+            System.out.println("La persona es menor de edad.");
+            
+        }
+        
+        
+        if ("m".equals(sexo.toLowerCase())) {
             
             System.out.println("La persona es de sexo masculino.");    
             
@@ -100,92 +189,13 @@ public class ServicioPersona {
             System.out.println("La letra indicada, no es parte de la lista, para poder indicar sexualidad.");
             
         } 
-        
-        return new Persona (nombre, apellido, edad, estatura, peso);
-        
+    
     }
-        
-    public int calcularIMC (Persona persona){
-        
-        double IMC = (persona.getPeso() / (persona.getEstatura() * persona.getEstatura()));
 
-        System.out.println("El indice de masa corporal es " + (int)IMC);
-        
-        if (IMC >= 20 && IMC <= 25){
-            
-        System.out.println("Estas en tu peso ideal.");
-        
-        pesoIdeal++;
-        
-        }else if (IMC <=20) {
-   
-        System.out.println("Estas por debajo de tu peso ideal (¡Cuidado!, puede que tenga desnutrición).");
-        
-        bajoPeso++;
-        
-        }else{    
-        
-        System.out.println("Estas por encima de tu peso ideal (¡Cuidado!, puede que tenga sobrepeso).");    
-        
-        sobrePeso++;
-        
-        }
-     
-        return (int)IMC;
-        
-    }
-        
-        public boolean esMayorDeEdad(Persona persona){
-            
-            if (persona.getEdad()>= 18) {
-            
-            System.out.println("La persona es mayor de edad.");
-        
-            mayorEdad++;
-            
-        } else {    
-            
-            System.out.println("La persona es menor de edad.");
-            
-        }
-        
-        return false;
+    public void eliminarPersona(Persona p) {
+
+        p = null;
 
     }
 
-        public void porcentajeImc (int[]imc){
-        
-        int bajoPeso = 0;
-        int pesoIdeal = 0;
-        int sobrePeso = 0;
-        
-        for(int i= 0; i< imc.length;i++){
-            int resultado =imc[i];
-            
-            if(resultado == -1){
-                bajoPeso++;
-            }else if(resultado == 0){
-                pesoIdeal++;
-            }else {
-                sobrePeso++;
-            }            
-        }
-        double porcentajeBajoPeso = (double) bajoPeso / imc.length * 100;
-        double porcentajePesoIdeal = (double) pesoIdeal / imc.length * 100;
-        double porcentajeSobrepeso = (double) sobrePeso / imc.length * 100;
-
-        System.out.println("Porcentaje de personas con bajo peso: " + 			 	  porcentajeBajoPeso + "%");
-        System.out.println("Porcentaje de personas con peso ideal: " + 	 	 	     	  porcentajePesoIdeal + "%");
-        System.out.println("Porcentaje de personas con sobrepeso: " + 				  porcentajeSobrepeso + "%");
-        
-    }
-        
-        public void porcentajeMayorDeEdad (){
-        
-            int porcMayordEdad = (mayorEdad * 100) / 4;
-            System.out.println("El porcentaje de personas mayor de edad es " + porcMayordEdad + "%");
-            
-        }
-        
-}    
-
+}

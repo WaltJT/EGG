@@ -54,19 +54,34 @@ public class Dia22_Ejercicio3_POO_Servicios {
         
         Persona p1 = sp.crearPersona();
         
+        sp.calcularIMC(p1);
+        
+        sp.esMayorDeEdad(p1);
+        
         Persona p2 = sp.crearPersona();
         
+        sp.calcularIMC(p2);
+        
+        sp.esMayorDeEdad(p2);
+
         Persona p3 = sp.crearPersona();
         
+        sp.calcularIMC(p3);
+        
+        sp.esMayorDeEdad(p3);
+        
         Persona p4 = sp.crearPersona();
-                
-//        sp.mostrarPersona(p1);
-//        
-//        sp.mostrarPersona(p2);
-//        
-//        sp.mostrarPersona(p3);
-//        
-//        sp.mostrarPersona(p4);
+               
+        sp.calcularIMC(p4);
+        
+        sp.esMayorDeEdad(p4);
+
+        sp.porcentajeMayorDeEdad();
+        
+        int[] imc = {-1, 0, 1, -1, 1, 1, 0, 0};
+        
+        sp.porcentajeImc(imc);
+        
         
     }
     
