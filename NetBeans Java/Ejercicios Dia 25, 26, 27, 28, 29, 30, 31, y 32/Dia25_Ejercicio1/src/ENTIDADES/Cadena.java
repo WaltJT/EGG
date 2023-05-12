@@ -42,19 +42,17 @@ G- Método contiene(String letra), deberá comprobar si la frase contiene una
 letra que ingresa el usuario y devuelve verdadero si la contiene y falso si no.
 
  */
+
 public class Cadena {
     
-    String frase;
-    String letra;
-    int longitud;
+      private String frase;
+    private int longitud;
 
-    public Cadena() {
-    }
+    public Cadena() {}
 
-    public Cadena(String frase, int longitud) {
+    public Cadena(String frase) {
         this.frase = frase;
         this.longitud = frase.length();
-        
     }
 
     public String getFrase() {
@@ -63,19 +61,10 @@ public class Cadena {
 
     public void setFrase(String frase) {
         this.frase = frase;
+        this.longitud = frase.length();
     }
 
     public int getLongitud() {
         return longitud;
     }
-
-    public void setLongitud(int longitud) {
-        this.longitud = longitud;
-    }
-
-    @Override
-    public String toString() {
-        return "cadena{" + "frase=" + frase + ", longitud=" + longitud + '}';
-    }
-    
 }

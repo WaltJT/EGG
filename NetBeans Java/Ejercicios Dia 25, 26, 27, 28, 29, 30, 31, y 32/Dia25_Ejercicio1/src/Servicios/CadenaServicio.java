@@ -49,47 +49,64 @@ letra que ingresa el usuario y devuelve verdadero si la contiene y falso si no.
 public class CadenaServicio {
 Scanner scanner = new Scanner (System.in);
     
-    public void mostrarVocales (Cadena c1){
-        int cont = 0;
-        char letra;  
-         
-         for (int i = 0; i < frase.getLongFrase(); i++){
-     
-            letra = frase.getFrase().charAt(i);
-         
-            if ("aeiou".indexOf(letra) != -1) {
-            
-                cont ++;
-            
+     public int mostrarVocales(Cadena cadena) {
+        int cantidad = 0;
+        String frase = cadena.getFrase().toLowerCase();
+        for(int i=0; i<frase.length(); i++) {
+            char c = frase.charAt(i);
+            if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                cantidad++;
+        
             }
-        
-         }     
-        
-         System.out.println("La cadena de vocales encontradas es igual a: " + cont);
-    }
-        
-        public Cadena crearCadena(){
-        
-        System.out.println("Ingrese una frase: ");
-        frase = scanner.next().toLowerCase();
-        
-        return new Cadena ();
-
-    }
-
-        public void invertirFrase (Cadena c1){
-            
-            //int i = frase.getLongFrase() -1; i >= 0; i--
-            
-            String fraseInv = "";
-            
-            for (int i = c1.getLongitud()-1; i >= 0; i--) {
-                fraseInv += c1.getFrase().charAt(i);
-            }
-            
-            System.out.println("La frase invertida es: " + fraseInv);
-            
+       
         }
+        return cantidad;
+
+     }
+
+    public String invertirFrase(Cadena cadena) {
+        StringBuilder sb = new StringBuilder(cadena.getFrase());
+        return sb.reverse().toString();
+
+    }
+
+    public int vecesRepetido(Cadena cadena, String letra) {
+        int cantidad = 0;
+        String frase = cadena.getFrase().toLowerCase();
+        char c = letra.toLowerCase().charAt(0);
+        for(int i=0; i<frase.length(); i++) {
+            if(frase.charAt(i) == c) {
+                cantidad++;
+
+            }
+
+        }
+
+        return cantidad;
+
+    }
+
+    public boolean compararLongitud(Cadena cadena, String frase) {
+        return cadena.getLongitud() == frase.length();
+
+    }
+
+    public String unirFrases(Cadena cadena, String frase) {
+        return cadena.getFrase() + " " + frase;
+
+    }
+
+    public String reemplazar(Cadena cadena, String letra, String reemplazo) {
+        return cadena.getFrase().replace(letra, reemplazo);
+
+    }
+
+    public boolean contiene(Cadena cadena, String letra) {
+        String frase = cadena.getFrase().toLowerCase();
+        char c = letra.toLowerCase().charAt(0);
+        return frase.indexOf(c) >= 0;
+
+    }
 
 }
 
