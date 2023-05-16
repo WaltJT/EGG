@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ENTIDADES;
+package Dia26_Ejercicio2_Final;
+
+import ENTIDAD.ParDeNumeros;
+import Servicios.ParDeNumerosServicios;
 
 /*
 Dia 25 Ejercicio 1 POO Servicios de Utilidad
 
- Realizar una clase llamada Cadena, en el paquete de entidades, que tenga como 
+Realizar una clase llamada Cadena, en el paquete de entidades, que tenga como 
 atributos una frase (String) y su longitud. Agregar constructor vacío y con 
 atributo frase solamente. Agregar getters y setters. El constructor con frase 
 como atributo debe setear la longitud de la frase de manera automática. Crear 
@@ -43,28 +46,25 @@ letra que ingresa el usuario y devuelve verdadero si la contiene y falso si no.
 
  */
 
-public class Cadena {
+public class Dia26_Ejercicio2_Final {
+
     
-    private String frase;
-    private int longitud;
+    public static void main(String[] args) {
+       
+    ParDeNumeros par = new ParDeNumeros();
+    ParDeNumerosServicios servicios = new ParDeNumerosServicios();
 
-    public Cadena() {}
+    servicios.mostrarValores(par);
 
-    public Cadena(String frase) {
-        this.frase = frase;
-        this.longitud = frase.length();
+    double mayor = servicios.devolverMayor(par);
+    System.out.println("El mayor de los dos números es: " + mayor);
+
+    double potencia = servicios.calcularPotencia(par);
+    System.out.println("La potencia del mayor elevado al menor es: " + potencia);
+
+    double raiz = servicios.calculaRaiz(par);
+    System.out.println("La raíz cuadrada del menor de los dos números es: " + raiz);
+
     }
-
-    public String getFrase() {
-        return frase;
-    }
-
-    public void setFrase(String frase) {
-        this.frase = frase;
-        this.longitud = frase.length();
-    }
-
-    public int getLongitud() {
-        return longitud;
-    }
+ 
 }

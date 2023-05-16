@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ENTIDADES;
+package Servicios;
+
+import ENTIDAD.ParDeNumeros;
 
 /*
 Dia 25 Ejercicio 1 POO Servicios de Utilidad
 
- Realizar una clase llamada Cadena, en el paquete de entidades, que tenga como 
+Realizar una clase llamada Cadena, en el paquete de entidades, que tenga como 
 atributos una frase (String) y su longitud. Agregar constructor vacío y con 
 atributo frase solamente. Agregar getters y setters. El constructor con frase 
 como atributo debe setear la longitud de la frase de manera automática. Crear 
@@ -43,28 +45,36 @@ letra que ingresa el usuario y devuelve verdadero si la contiene y falso si no.
 
  */
 
-public class Cadena {
-    
-    private String frase;
-    private int longitud;
+public class ParDeNumerosServicios {
+  
+     public void mostrarValores(ParDeNumeros par) {
+        
+         System.out.println("Los valores guardados son: " + par.getNum1() + " y " + par.getNum2());
 
-    public Cadena() {}
+     }
 
-    public Cadena(String frase) {
-        this.frase = frase;
-        this.longitud = frase.length();
+    public double devolverMayor(ParDeNumeros par) {
+        
+        return Math.max(par.getNum1(), par.getNum2());
+
     }
 
-    public String getFrase() {
-        return frase;
+    public double calcularPotencia(ParDeNumeros par) {
+        
+        double mayor = Math.round(Math.max(par.getNum1(), par.getNum2()));
+        double menor = Math.round(Math.min(par.getNum1(), par.getNum2()));
+        return Math.pow(mayor, menor);
+
     }
 
-    public void setFrase(String frase) {
-        this.frase = frase;
-        this.longitud = frase.length();
+    public double calculaRaiz(ParDeNumeros par) {
+        
+        double menor = Math.min(par.getNum1(), par.getNum2());
+        double valorAbsoluto = Math.abs(menor);
+        return Math.sqrt(valorAbsoluto);
+
     }
 
-    public int getLongitud() {
-        return longitud;
-    }
+
 }
+

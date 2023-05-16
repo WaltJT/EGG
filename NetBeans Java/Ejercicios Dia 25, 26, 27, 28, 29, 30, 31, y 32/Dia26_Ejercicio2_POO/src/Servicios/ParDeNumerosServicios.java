@@ -40,6 +40,7 @@ public class ParDeNumerosServicios {
     double countB = 0;
 
     public ParDeNumerosServicios() {
+    
     }
     
     public double getA() {

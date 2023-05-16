@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ENTIDADES;
+package ENTIDAD;
 
 /*
 Dia 25 Ejercicio 1 POO Servicios de Utilidad
 
- Realizar una clase llamada Cadena, en el paquete de entidades, que tenga como 
+Realizar una clase llamada Cadena, en el paquete de entidades, que tenga como 
 atributos una frase (String) y su longitud. Agregar constructor vacío y con 
 atributo frase solamente. Agregar getters y setters. El constructor con frase 
 como atributo debe setear la longitud de la frase de manera automática. Crear 
@@ -43,28 +43,37 @@ letra que ingresa el usuario y devuelve verdadero si la contiene y falso si no.
 
  */
 
-public class Cadena {
+public class ParDeNumeros {
     
-    private String frase;
-    private int longitud;
+    private double num1;
+    private double num2;
 
-    public Cadena() {}
+    public ParDeNumeros() {
+        this.num1 = Math.random();
+        this.num2 = Math.random();
 
-    public Cadena(String frase) {
-        this.frase = frase;
-        this.longitud = frase.length();
     }
 
-    public String getFrase() {
-        return frase;
+    public double getNum1() {
+        return num1;
+
     }
 
-    public void setFrase(String frase) {
-        this.frase = frase;
-        this.longitud = frase.length();
+    public void setNum1(double num1) {
+        this.num1 = num1;
+
     }
 
-    public int getLongitud() {
-        return longitud;
+    public double getNum2() {
+        return num2;
+
     }
+
+    public void setNum2(double num2) {
+        this.num2 = num2;
+
+    }
+
 }
+    
+
