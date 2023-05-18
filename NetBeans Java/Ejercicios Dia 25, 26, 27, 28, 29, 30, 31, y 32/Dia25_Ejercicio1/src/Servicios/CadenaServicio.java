@@ -49,13 +49,24 @@ letra que ingresa el usuario y devuelve verdadero si la contiene y falso si no.
 public class CadenaServicio {
 Scanner scanner = new Scanner (System.in);
     
+public Cadena crearCadena(){
+    
+String frase;    
+    
+          System.out.println("Ingrese una frase: ");
+          frase = scanner.next().toLowerCase();
+        
+        return new Cadena ();
+
+    }
+
     public void mostrarVocales (Cadena c1){
         int cont = 0;
         char letra;  
-         
-         for (int i = 0; i < frase.getLongFrase(); i++){
+        
+         for (int i = 0; i < c1.getLongitud(); i++){
      
-            letra = frase.getFrase().charAt(i);
+            letra = c1.getFrase().charAt(i);
          
             if ("aeiou".indexOf(letra) != -1) {
             
@@ -68,15 +79,6 @@ Scanner scanner = new Scanner (System.in);
          System.out.println("La cadena de vocales encontradas es igual a: " + cont);
     }
         
-        public Cadena crearCadena(){
-        
-        System.out.println("Ingrese una frase: ");
-        frase = scanner.next().toLowerCase();
-        
-        return new Cadena ();
-
-    }
-
         public void invertirFrase (Cadena c1){
             
             //int i = frase.getLongFrase() -1; i >= 0; i--
