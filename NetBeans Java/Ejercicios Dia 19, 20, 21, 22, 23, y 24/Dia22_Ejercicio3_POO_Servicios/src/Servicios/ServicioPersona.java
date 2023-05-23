@@ -155,9 +155,9 @@ public class ServicioPersona {
 
         public void porcentajeImc (int[]imc){
         
-        int bajoPeso = 0;
-        int pesoIdeal = 0;
-        int sobrePeso = 0;
+//        int bajoPeso = 0;
+//        int pesoIdeal = 0;
+//        int sobrePeso = 0;
         
         for(int i= 0; i< imc.length;i++){
             int resultado =imc[i];
