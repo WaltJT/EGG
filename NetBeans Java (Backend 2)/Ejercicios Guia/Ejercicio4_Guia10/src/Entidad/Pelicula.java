@@ -33,9 +33,9 @@ en pantalla.
 
 public class Pelicula {
  
-    private String titulo;
-    private String director;
-    private double duracion;
+    private final String titulo;
+    private final String director;
+    private final double duracion;
 
     public Pelicula(String titulo, String director, double duracion) {
         this.titulo = titulo;

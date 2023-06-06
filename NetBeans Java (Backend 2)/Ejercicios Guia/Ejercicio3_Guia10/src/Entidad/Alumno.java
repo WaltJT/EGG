@@ -26,7 +26,7 @@ promedio final, devuelto por el método y mostrado en el main.
 public class Alumno {
     
     private final String nombre;
-    private List<Integer> notas;
+    private final List<Integer> notas;
     
     
     public Alumno(String nombre, List<Integer> notas) {
