@@ -1,2 +1,0 @@
-Entidad.PerroService
-Entidad.Perro
