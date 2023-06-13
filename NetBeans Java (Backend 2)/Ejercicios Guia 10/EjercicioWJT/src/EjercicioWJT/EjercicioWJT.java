@@ -27,7 +27,8 @@ public class EjercicioWJT {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Ingrese el nombre del animal (o 'salir' para terminar):");
+            System.out.println("Ingrese el nombre del animal (o 'salir' para "
+            + "terminar):");
             String nombre = scanner.nextLine();
 
             if (nombre.equalsIgnoreCase("salir")) {
