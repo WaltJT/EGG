@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejercicio1_Guia11_Herencias.Entidades;
+package Ejercicio1_Guia12_Herencias.Entidades;
 
 import java.util.Scanner;
 

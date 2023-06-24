@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejercicio1_Guia11_Herencias.Entidades;
+package Ejercicio1_Guia12_Herencias.Entidades;
 
 /*
 EJERCICIO 1 GUIA 12 HERENCIAS
@@ -17,10 +17,10 @@ mostrar luego un mensaje por pantalla informando de que se alimenta. Generar una
 clase Main que realice lo siguiente:
  */
 
-public class Caballo extends Animal {
+public class Perro extends Animal {
 
-    public Caballo(String nombre, String alimento, Integer edad, String raza) {
+    public Perro(String nombre, String alimento, Integer edad, String raza) {
         super(nombre, alimento, edad, raza);
     }
-            
+    
 }

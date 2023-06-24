@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejercicio1_Guia11_Herencias;
+package Ejercicio1_Guia12_Herencias;
 
-import Ejercicio1_Guia11_Herencias.Entidades.Animal;
-import Ejercicio1_Guia11_Herencias.Entidades.Caballo;
-import Ejercicio1_Guia11_Herencias.Entidades.Gato;
-import Ejercicio1_Guia11_Herencias.Entidades.Perro;
+import Ejercicio1_Guia12_Herencias.Entidades.Animal;
+import Ejercicio1_Guia12_Herencias.Entidades.Caballo;
+import Ejercicio1_Guia12_Herencias.Entidades.Gato;
+import Ejercicio1_Guia12_Herencias.Entidades.Perro;
 
 /*
 EJERCICIO 1 GUIA 12 HERENCIAS
@@ -22,7 +22,7 @@ mostrar luego un mensaje por pantalla informando de que se alimenta. Generar una
 clase Main que realice lo siguiente:
  */
 
-public class Ejercicio1_Guia11_Herencias {
+public class Ejercicio1_Guia12_Herencias {
 
     public static void main(String[] args) {
 
