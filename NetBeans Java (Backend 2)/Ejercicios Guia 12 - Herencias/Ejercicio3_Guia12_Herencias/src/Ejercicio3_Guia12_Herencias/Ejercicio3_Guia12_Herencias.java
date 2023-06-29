@@ -3,13 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejercicio2_Guia12_Herencias;
+package Ejercicio3_Guia12_Herencias;
 
+import Entidades.Electrodomesticos;
 import Entidades.Lavadora;
 import Entidades.Televisor;
+import java.util.ArrayList;
+
 
 /*
-EJERCICIO 2 GUIA 12 HERENCIAS
+EJERCICIO 3 GUIA 12 HERENCIAS
+
+Siguiendo el ejercicio anterior, en el main vamos a crear un ArrayList de 
+Electrodomésticos para guardar 4 electrodomésticos, ya sean lavadoras o 
+televisores, con valores ya asignados. Luego, recorrer este array y ejecutar el 
+método precioFinal() en cada electrodoméstico. Se deberá también mostrar el 
+precio de cada tipo de objeto, es decir, el precio de todos los televisores y el 
+de las lavadoras. Una vez hecho eso, también deberemos mostrar, la suma del
+precio de todos los Electrodomésticos. Por ejemplo, si tenemos una lavadora con 
+un precio de 2000 y un televisor de 5000, el resultado final será de 
+7000 (2000+5000) para electrodomésticos, 2000 para lavadora y 5000 para 
+televisor.
+
+****
 
 Crear una superclase llamada Electrodoméstico con los siguientes atributos: 
 precio, color, consumo energético (letras entre A y F) y peso.
@@ -33,8 +49,8 @@ Al precio se le da un valor base de $1000.
 • Método precioFinal(): según el consumo energético y su tamaño, aumentará el 
 valor del precio. Esta es la lista de precios:
 
-A continuación, se debe crear una subclase llamada Lavadora, con el atributo carga,
-además de los atributos heredados.
+A continuación, se debe crear una subclase llamada Lavadora, con el atributo 
+carga, además de los atributos heredados.
 
 Los constructores que se implementarán serán:
 • Un constructor vacío.
@@ -92,22 +108,62 @@ mostrar el precio final de los dos electrodomésticos.
 
  */
 
-public class Ejercicio2_Guia12_Herencias {
+public class Ejercicio3_Guia12_Herencias {
 
     public static void main(String[] args) {
-    
-    Lavadora lavadora = new Lavadora();
-    
-    lavadora.crearLavadora();
-    
-    System.out.println("Precio final de la lavadora: $" + lavadora.precioFinal());
+  
+    ArrayList<Electrodomesticos> electro = new ArrayList<>();
 
-    Televisor televisor = new Televisor();
-    
-    televisor.crearTelevisor();
-    
-    System.out.println("Precio final del televisor: $" + televisor.precioFinal());
+        // Crear 4 electrodomésticos (2 lavadoras y 2 televisores)
+        Lavadora lavadora1 = new Lavadora();
+        Lavadora lavadora2 = new Lavadora();
+        Televisor televisor1 = new Televisor();
+        Televisor televisor2 = new Televisor();
+
+        lavadora1.crearLavadora();  
+        lavadora1.setNombre("Lavadora1: ");
+        
+        lavadora2.crearLavadora();        
+        lavadora2.setNombre("Lavadora2: ");
+        
+        televisor1.crearTelevisor();
+        televisor1.setNombre("Televisor1: ");
+        
+        televisor2.crearTelevisor();
+        televisor2.setNombre("Televisor2: ");
+        
+        electro.add(lavadora1);
+        electro.add(lavadora2);
+        electro.add(televisor1);
+        electro.add(televisor2);
+
+        double precioTotalElectrodomesticos = 0;
+        double precioTotalLavadoras = 0;
+        double precioTotalTelevisores = 0;
+
+        for (Electrodomesticos electrodomestico : electro) {
+            System.out.println(electrodomestico.toString());
+            double precioFinal = electrodomestico.precioFinal();
+            precioTotalElectrodomesticos += precioFinal;
+
+            if (electrodomestico instanceof Lavadora) {
+                precioTotalLavadoras += precioFinal;
+
+            } else if (electrodomestico instanceof Televisor) {
+                precioTotalTelevisores += precioFinal;
+
+            }
+            
+            System.out.println("Precio final: $" + electrodomestico.precioFinal());
+            
+        }
+
+        System.out.println("\nPrecio total de los electrodomésticos: $" + precioTotalElectrodomesticos);
+        System.out.println("Precio total de las lavadoras: $" + precioTotalLavadoras);
+        System.out.println("Precio total de los televisores: $" + precioTotalTelevisores);
         
     }
-    
+
 }
+        
+    

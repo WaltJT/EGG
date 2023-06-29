@@ -3,13 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejercicio2_Guia12_Herencias;
+package Entidades;
 
-import Entidades.Lavadora;
-import Entidades.Televisor;
+import java.util.Scanner;
 
 /*
-EJERCICIO 2 GUIA 12 HERENCIAS
+EJERCICIO 3 GUIA 12 HERENCIAS
+
+Siguiendo el ejercicio anterior, en el main vamos a crear un ArrayList de 
+Electrodomésticos para guardar 4 electrodomésticos, ya sean lavadoras o 
+televisores, con valores ya asignados. Luego, recorrer este array y ejecutar el 
+método precioFinal() en cada electrodoméstico. Se deberá también mostrar el 
+precio de cada tipo de objeto, es decir, el precio de todos los televisores y el 
+de las lavadoras. Una vez hecho eso, también deberemos mostrar, la suma del
+precio de todos los Electrodomésticos. Por ejemplo, si tenemos una lavadora con 
+un precio de 2000 y un televisor de 5000, el resultado final será de 
+7000 (2000+5000) para electrodomésticos, 2000 para lavadora y 5000 para 
+televisor.
+
+**** 
 
 Crear una superclase llamada Electrodoméstico con los siguientes atributos: 
 precio, color, consumo energético (letras entre A y F) y peso.
@@ -33,8 +45,9 @@ Al precio se le da un valor base de $1000.
 • Método precioFinal(): según el consumo energético y su tamaño, aumentará el 
 valor del precio. Esta es la lista de precios:
 
-A continuación, se debe crear una subclase llamada Lavadora, con el atributo carga,
-además de los atributos heredados.
+
+A continuación, se debe crear una subclase llamada Lavadora, con el atributo 
+carga, además de los atributos heredados.
 
 Los constructores que se implementarán serán:
 • Un constructor vacío.
@@ -51,6 +64,8 @@ si la carga es menor o igual, no se incrementará el precio. Este método debe
 llamar al método padre y añadir el código necesario. Recuerda que las 
 condiciones que hemos visto en la clase Electrodoméstico también deben afectar 
 al precio.
+
+
 Se debe crear también una subclase llamada Televisor con los siguientes 
 atributos:
 Resolución (en pulgadas) y sintonizador TDT (booleano), además de los atributos
@@ -92,22 +107,85 @@ mostrar el precio final de los dos electrodomésticos.
 
  */
 
-public class Ejercicio2_Guia12_Herencias {
+public class Lavadora extends Electrodomesticos {
 
-    public static void main(String[] args) {
-    
-    Lavadora lavadora = new Lavadora();
-    
-    lavadora.crearLavadora();
-    
-    System.out.println("Precio final de la lavadora: $" + lavadora.precioFinal());
+Scanner scanner = new Scanner(System.in);        
 
-    Televisor televisor = new Televisor();
+    private double carga;
+    private String nombre; 
     
-    televisor.crearTelevisor();
+    public Lavadora() {
+        super();
+        this.carga = 5;
     
-    System.out.println("Precio final del televisor: $" + televisor.precioFinal());
+    }
+    
+    public Lavadora(double carga,Integer precio, String color, char consumoEnergetico, Integer peso) {
+        super(precio, color, consumoEnergetico, peso);
+        this.carga = carga;
+        
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+        
+    public double getCarga() {
+        return carga;
+    }
+
+    public void setCarga(double carga) {
+        this.carga = carga;
+    }
+
+//    • Método crearLavadora (): este método llama a crearElectrodomestico() de la 
+//clase padre, lo utilizamos para llenar los atributos heredados del padre y 
+//después llenamos el atributo propio de la lavadora.
+    
+ public void crearLavadora () {
+ 
+     System.out.println("");
+     
+     System.out.println("LAVADORA: ");
+     
+     System.out.println("");
+     
+     super.crearElectrodomestico();
+ 
+     System.out.println("Ingrese la carga de la lavadora (Kg): ");
+     this.carga = scanner.nextDouble();
+     
+ }
+   
+// • Método precioFinal(): este método será heredado y se le sumará la siguiente
+//funcionalidad. Si tiene una carga mayor de 30 kg, aumentará el precio en $500, 
+//si la carga es menor o igual, no se incrementará el precio. Este método debe 
+//llamar al método padre y añadir el código necesario. Recuerda que las 
+//condiciones que hemos visto en la clase Electrodoméstico también deben afectar 
+//al precio.
+ 
+@Override
+ public double precioFinal() {
+    double precioFinal = super.precioFinal();
+        
+    if (this.carga > 30) {
+     
+       precioFinal += 500;
+        
+    }
+     
+    return precioFinal;
+ 
+    }
+
+    @Override
+    public String toString() {
+    
+        System.out.println("");
+        
+        return nombre + "\n" + super.toString() + "\n" + " Carga=" + carga + '}';
         
     }
     
 }
+

@@ -3,13 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejercicio2_Guia12_Herencias;
+package Entidades;
 
-import Entidades.Lavadora;
-import Entidades.Televisor;
+import java.util.Scanner;
 
 /*
-EJERCICIO 2 GUIA 12 HERENCIAS
+EJERCICIO 3 GUIA 12 HERENCIAS
+
+Siguiendo el ejercicio anterior, en el main vamos a crear un ArrayList de 
+Electrodomésticos para guardar 4 electrodomésticos, ya sean lavadoras o 
+televisores, con valores ya asignados. Luego, recorrer este array y ejecutar el 
+método precioFinal() en cada electrodoméstico. Se deberá también mostrar el 
+precio de cada tipo de objeto, es decir, el precio de todos los televisores y el 
+de las lavadoras. Una vez hecho eso, también deberemos mostrar, la suma del
+precio de todos los Electrodomésticos. Por ejemplo, si tenemos una lavadora con 
+un precio de 2000 y un televisor de 5000, el resultado final será de 
+7000 (2000+5000) para electrodomésticos, 2000 para lavadora y 5000 para 
+televisor.
+
+****
 
 Crear una superclase llamada Electrodoméstico con los siguientes atributos: 
 precio, color, consumo energético (letras entre A y F) y peso.
@@ -33,8 +45,9 @@ Al precio se le da un valor base de $1000.
 • Método precioFinal(): según el consumo energético y su tamaño, aumentará el 
 valor del precio. Esta es la lista de precios:
 
-A continuación, se debe crear una subclase llamada Lavadora, con el atributo carga,
-además de los atributos heredados.
+***
+A continuación, se debe crear una subclase llamada Lavadora, con el atributo 
+carga, además de los atributos heredados.
 
 Los constructores que se implementarán serán:
 • Un constructor vacío.
@@ -51,6 +64,8 @@ si la carga es menor o igual, no se incrementará el precio. Este método debe
 llamar al método padre y añadir el código necesario. Recuerda que las 
 condiciones que hemos visto en la clase Electrodoméstico también deben afectar 
 al precio.
+
+***
 Se debe crear también una subclase llamada Televisor con los siguientes 
 atributos:
 Resolución (en pulgadas) y sintonizador TDT (booleano), además de los atributos
@@ -92,22 +107,97 @@ mostrar el precio final de los dos electrodomésticos.
 
  */
 
-public class Ejercicio2_Guia12_Herencias {
+public class Televisor extends Electrodomesticos {
 
-    public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);    
     
-    Lavadora lavadora = new Lavadora();
-    
-    lavadora.crearLavadora();
-    
-    System.out.println("Precio final de la lavadora: $" + lavadora.precioFinal());
+    private double resolucion;
+    private boolean SintonizadorTDT;
+    private String nombre;
 
-    Televisor televisor = new Televisor();
-    
-    televisor.crearTelevisor();
-    
-    System.out.println("Precio final del televisor: $" + televisor.precioFinal());
+    public Televisor() {
+    }
+
+    public Televisor(double resolucion, boolean SintonizadorTDT, Integer precio, String color, char consumoEnergetico, Integer peso) {
+        super(precio, color, consumoEnergetico, peso);
+        this.resolucion = resolucion;
+        this.SintonizadorTDT = SintonizadorTDT;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
         
+    public double getResolucion() {
+        return resolucion;
+    }
+
+    public void setResolucion(double resolucion) {
+        this.resolucion = resolucion;
+    }
+
+    public boolean isSintonizadorTDT() {
+        return SintonizadorTDT;
+    }
+
+    public void setSintonizadorTDT(boolean SintonizadorTDT) {
+        this.SintonizadorTDT = SintonizadorTDT;
     }
     
+    public void crearTelevisor () {
+    
+        System.out.println("");
+        
+        System.out.println("TELEVISOR: ");
+        
+        System.out.println("");
+        
+        super.crearElectrodomestico();
+        
+        System.out.println("Ingrese la resolución del televisor (en pulgadas): ");
+        double resolucion = scanner.nextDouble();
+
+        System.out.println("¿Tiene sintonizador TDT incorporado? (true/false): ");
+        boolean sintonizadorTDT = scanner.nextBoolean();
+
+        // Establecer los atributos propios del televisor
+        this.resolucion = resolucion;
+        this.SintonizadorTDT = sintonizadorTDT;
+    
+    }
+    
+    @Override
+    public double precioFinal() {
+        double precioFinal = super.precioFinal(); // Llamar al método de la clase padre para obtener el precio base
+
+        // Aumentar el precio según la resolución del televisor
+        if (this.resolucion > 40) {
+        
+            precioFinal *= 1.3; // Incrementar el precio en un 30%
+        
+        }
+
+        // Aumentar el precio si tiene sintonizador TDT incorporado
+
+        if (this.SintonizadorTDT) {
+
+            precioFinal += 500;
+
+        }
+
+        return precioFinal;
+
+    }
+
+    @Override
+    public String toString() {
+    
+        System.out.println("");
+        
+        return nombre + "\n" + super.toString() + "\n" + " Resolucion=" + resolucion + "\n SintonizadorTDT=" + SintonizadorTDT + '}';
+    
+    }
+        
 }
+   
+    
