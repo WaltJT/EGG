@@ -38,7 +38,7 @@ resultados de cada edificio de oficinas.
 
 public abstract class Edificio {
 
-     protected double ancho;
+    protected double ancho;
     protected double alto;
     protected double largo;
 
