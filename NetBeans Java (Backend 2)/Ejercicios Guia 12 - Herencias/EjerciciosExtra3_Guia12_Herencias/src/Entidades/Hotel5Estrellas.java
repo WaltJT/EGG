@@ -79,7 +79,11 @@ public class Hotel5Estrellas extends Hotel {
     private int salonesConf;
     private int Suites;
 
-    public Hotel5Estrellas() {
+    public Hotel5Estrellas(int cantHabitaciones, int numCamas, int cantPisos, int precioHabitacion, String nombrehotel, String direccion, String localidad, String gerente, String encargado) {
+        super(cantHabitaciones, numCamas, cantPisos, precioHabitacion, nombrehotel, direccion, localidad, gerente, encargado);
+    }
+    
+    public void Hotel5Estrellas() {
       crearHotel();
     }
     

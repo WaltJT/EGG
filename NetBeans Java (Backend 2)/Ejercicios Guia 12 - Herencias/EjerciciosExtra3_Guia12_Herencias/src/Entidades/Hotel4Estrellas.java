@@ -80,7 +80,11 @@ Habitaciones.*/
     private String Restaurante;
     private int capacidadRestaurante;
 
-    public Hotel4Estrellas() {
+    public Hotel4Estrellas(int cantHabitaciones, int numCamas, int cantPisos, int precioHabitacion, String nombrehotel, String direccion, String localidad, String gerente, String encargado) {
+        super(cantHabitaciones, numCamas, cantPisos, precioHabitacion, nombrehotel, direccion, localidad, gerente, encargado);
+    }
+
+    public void Hotel4Estrellas() {
         crearHotel();
     }
 
