@@ -5,13 +5,14 @@ siguiente manera: */
 -- a) A continuación, realizar las siguientes consultas sobre la base de datos personal:
 
 -- 1. Obtener los datos completos de los empleados.
-
+USE Personal;
+SELECT * FROM empleados;
 
 -- 2. Obtener los datos completos de los departamentos.
-
+SELECT * FROM departamentos;
 
 -- 3. Listar el nombre de los departamentos.
-
+SELECT P.nombre_depto ,P.*  FROM departamentos P ORDER BY P.nombre_jefe_depto ASC;
 
 -- 4. Obtener el nombre y salario de todos los empleados.
 
