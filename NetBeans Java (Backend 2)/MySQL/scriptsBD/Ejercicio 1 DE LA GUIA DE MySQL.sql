@@ -15,22 +15,22 @@ SELECT * FROM departamentos;
 SELECT P.nombre_depto ,P.*  FROM departamentos P ORDER BY P.nombre_jefe_depto ASC;
 
 -- 4. Obtener el nombre y salario de todos los empleados.
-
+SELECT E.Nombre ,E.Sal_emp  FROM empleados E ORDER BY E.Nombre ASC;
 
 -- 5. Listar todas las comisiones.
-
+SELECT E.Nombre ,E.Sal_emp, E.Comision_emp  FROM empleados E ORDER BY E.Nombre ASC;
 
 -- 6. Obtener los datos de los empleados cuyo cargo sea ‘Secretaria’.
-
+SELECT E.Nombre ,E.Sal_emp, E.Comision_emp, E.Cargo_emp  FROM empleados E WHERE E.Cargo_emp = 'Secretaria' ORDER BY E.Nombre ASC;
 
 -- 7. Obtener los datos de los empleados vendedores, ordenados por nombre alfabéticamente.
-
+SELECT E.Nombre ,E.Sal_emp, E.Comision_emp, E.Cargo_emp  FROM empleados E WHERE E.Cargo_emp = 'Vendedor' ORDER BY E.Nombre ASC;
 
 -- 8. Obtener el nombre y cargo de todos los empleados, ordenados por salario de menor a mayor.
-
+SELECT E.Nombre , E.Cargo_emp, E.Sal_emp  FROM empleados E ORDER BY Sal_emp ASC;
 
 -- 9. Obtener el nombre de o de los jefes que tengan su departamento situado en la ciudad de “Ciudad Real”
-
+SELECT D.*  FROM Departamentos D WHERE D.Ciudad = 'Ciudad Real' ORDER BY D.Nombre_jefe_depto ASC;
 
 -- 10. Elabore un listado donde para cada fila, figure el alias ‘Nombre’ y ‘Cargo’ para las respectivas tablas de empleados.
 
