@@ -33,10 +33,14 @@ SELECT E.Nombre , E.Cargo_emp, E.Sal_emp  FROM empleados E ORDER BY Sal_emp ASC;
 SELECT D.*  FROM Departamentos D WHERE D.Ciudad = 'Ciudad Real' ORDER BY D.Nombre_jefe_depto ASC;
 
 -- 10. Elabore un listado donde para cada fila, figure el alias ‘Nombre’ y ‘Cargo’ para las respectivas tablas de empleados.
-
+SELECT E.Nombre AS 'Nombre', E.cargo_emp AS 'Cargo' FROM empleados E;
 
 -- 11. Listar los salarios y comisiones de los empleados del departamento 2000, ordenado por comisión de menor a mayor.
 
+-- A la siguiente Query le falta agregar que no tome "registros" duplicados, la Query que le sigue debajo si agrega esa indicación.
+SELECT E.*,D.* FROM Empleados E, Departamentos D INNER JOIN Empleados, Departamentos WHERE D.id_depto = '2000' AND E.id_depto = '2000' ORDER BY E.Comision_emp ASC; 
+
+SELECT E.*, D.* FROM Empleados E INNER JOIN Departamentos D ON E.id_depto = D.id_depto WHERE D.id_depto = '2000' AND E.id_emp NOT IN (SELECT id_emp FROM Empleados GROUP BY id_emp HAVING COUNT(*) > 1) ORDER BY E.Comision_emp ASC;
 
 -- 12. Obtener el valor total a pagar a cada empleado del departamento 3000, que resulta de: sumar el salario y la comisión, 
 -- más una bonificación de 500. Mostrar el nombre del empleado y el total a pagar, en orden alfabético.
