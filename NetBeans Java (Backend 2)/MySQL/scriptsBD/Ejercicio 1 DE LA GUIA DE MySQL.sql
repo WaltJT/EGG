@@ -103,30 +103,36 @@ SELECT MAX(sal_emp) AS salario_maximo, MIN(sal_emp) AS salario_minimo, MAX(sal_e
 -- 24. Hallar el salario promedio por departamento. Consultas con Having.
 USE personal;
 
-SELECT D.*, AVG(E.sal_emp) AS 'Salario_promedio' 
-FROM empleados E INNER JOIN departamentos D 
-GROUP BY E.sal_emp
-HAVING AVG(E.sal_emp);
-
-SELECT D.id_depto, AVG(E.sal_emp) AS 'SALARIO_PROMEDIO', D.*
-FROM empleados E, departamentos D INNER JOIN empleados, departamentos 
-GROUP BY D.id_depto
-HAVING AVG(sal_emp);
-
--- FUNCIONA CORRECTAMENTE
 SELECT d.id_depto,  
-       d.nombre_depto AS nombre_departamento,
-       AVG(e.sal_emp) AS salario_promedio
+       d.nombre_depto AS 'NOMBRE_DEPTO',
+       AVG(e.sal_emp) AS 'SALARIO_PROMEDIO'
 FROM empleados e
 INNER JOIN departamentos d
 ON d.id_depto = e.id_depto
 GROUP BY id_depto
-HAVING AVG(sal_emp)
+HAVING AVG(sal_emp);
 
 -- 25. Hallar los departamentos que tienen más de tres empleados. Mostrar el número de empleados de esos departamentos.
+USE personal;
 
+SELECT D.nombre_depto, COUNT(*) AS numero_empleados
+FROM departamentos D
+INNER JOIN empleados E ON D.id_depto = E.id_depto
+GROUP BY D.nombre_depto
+HAVING COUNT(*) > 3;
 
 -- 26. Hallar los departamentos que no tienen empleados Consulta con Subconsulta
+USE personal;
 
+SELECT D.*, E.*
+FROM departamentos D, empleados E
+WHERE E.id_emp NOT IN (SELECT DISTINCT E.id_emp FROM empleados E);
+
+SELECT D.*, E.*, D.nombre_depto AS numero_empleados
+FROM departamentos D
+INNER JOIN empleados E ON D.id_depto = E.id_emp
+WHERE E.id_emp IS NULL;  -- WHERE id_depto NOT IN (SELECT id_depto FROM departamentos);
 
 -- 28. Mostrar la lista de los empleados cuyo salario es mayor o igual que el promedio de la empresa. Ordenarlo por departamento.
+
+-- ***Pagina 47 Ejercicios 2 de MySQL***

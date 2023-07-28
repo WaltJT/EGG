@@ -55,6 +55,8 @@ USE nba;
 SELECT J.*, E.*  FROM jugadores J INNER JOIN estadisticas E WHERE E.puntos_por_partido ORDER BY E.puntos_por_partido DESC;
 
 -- 13. Mostrar el nombre del equipo, conferencia y división del jugador más alto de la NBA.
+USE nba;
+
 SELECT J.nombre_equipo, E.Conferencia, J.Altura  FROM jugadores J INNER JOIN equipos E WHERE E.Nombre ORDER BY J.Altura DESC;
 SELECT J.*, J.nombre_equipo, E.Conferencia, J.Altura  FROM jugadores J INNER JOIN equipos E WHERE E.Nombre ORDER BY J.Altura DESC;
 
@@ -68,6 +70,14 @@ INNER JOIN equipos E ON J.nombre_equipo = E.Nombre
 GROUP BY J.nombre_equipo, E.Conferencia;
 
 -- 14. Mostrar el partido o partidos (equipo_local, equipo_visitante y diferencia) con mayor diferencia de puntos.
+USE nba;
 
+SELECT P.*, (puntos_local - puntos_visitantes) AS dif_puntos, P.
+FROM partidos P
+WHERE ;
+
+-- 14. Listar el salario, la comisión, el salario total (salario + comisión) y nombre, de aquellos empleados que tienen comisión superior a 1000.
+USE Personal;
+SELECT E.nombre, E.sal_emp, E.comision_emp, (E.sal_emp + E.comision_emp + 500) AS 'Total_pagar' FROM Empleados E WHERE E.comision_emp > 1000 ORDER BY E.nombre ASC;
 
 -- 15. Mostrar quien gana en cada partido (codigo, equipo_local, equipo_visitante, equipo_ganador), en caso de empate sera null.

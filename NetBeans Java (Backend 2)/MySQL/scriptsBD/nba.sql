@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS equipos (
   Division varchar(9) DEFAULT NULL,
   PRIMARY KEY (Nombre)
 );
+
 INSERT INTO equipos VALUES ('Celtics','Boston','East','Atlantic');
 INSERT INTO equipos VALUES ('Raptors','Toronto','East','Atlantic');
 INSERT INTO equipos VALUES ('76ers','Philadelphia','East','Atlantic');
