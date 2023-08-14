@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>EJEMPLOS HTML Y CSS</title>
+    <link rel="stylesheet" href="EJEMPLOS HTML Y CSS.css">
+</head>
+<body>
+
+<ul>    
+    <ul>
+
+    <H1><U><center> EJEMPLOS HTML Y CSS: </center></U></H1>
+
+    <H4><U> LISTAS DESORDENADAS: </U></H4>
+    
+    <p> En este ejemplo nos encontramos con una lista desordenada donde uno de los elementos tiene una viñeta cuadrada en lugar de un redondel como se específica para el resto de los elementos en la etiqueta. </p>  
+
+    <ul type="square">
+        <li>Elemento 1 </li>
+        <li>Elemento 2 </li>
+        <li>Elemento 3 </li>
+        <li type="circle">Elemento 4 </li>
+        </ul>
+
+        <br>
+
+    <H4><U> LISTAS ORDENADAS: </U></H4>    
+
+    <p> Las listas ordenadas sirven también para presentar información en diversos elementos o items, 
+    con la particularidad que éstos estarán precedidos de un número o una letra para enumerarlos
+    manteniendo un orden.<br>
+     Para implementar listas ordenadas usaremos la etiqueta OL (ordered list) y su cierre. Cada
+    elemento será igualmente indicado por la etiqueta LI(list item), que ya vimos en las listas
+    desordenadas.<br> </p>
+
+    <br>
+
+        <p> Reglas de convivencia</p>
+        <ol>
+        <li> Respeta a tu compañero y escucha su opinión </li>
+        <li> Trata amablemente a tu entorno </li>
+        </ol>
+
+    <H4><U> TIPO DE NUMERACION: </U></H4>
+
+        <p> Ordenamos por números </p>
+        <ol type="1">
+        <li> Elemento 1 </li>
+        <li> Elemento 2 </li>
+        </ol>
+        <p> Ordenamos por letras </p>
+        <ol type="a">
+        <li> Elemento a </li>
+        <li> Elemento b </li>
+        </ol>
+        <p>Ordenamos por números romanos empezando por el 10</p>
+        <ol type="i" start="10">
+        <li> Elemento x </li>
+        <li> Elemento xi </li>
+        </ol>
+
+        <br>
+
+        <H4><U> ANIDANDO LISTAS: </U></H4>
+
+        <p> Nada nos impide utilizar todas estas etiquetas de forma anidada como hemos visto en otros casos.
+        De esta forma, podemos conseguir listas mixtas. <br></p>
+        
+        <br>
+
+        <p>Ciudades del mundo</p>
+        <ul>
+        <li>Argentina </li>
+        <ol>
+        <li>Buenos Aires </li>
+        <li>Bariloche </li>
+        </ol>
+        <li>Uruguay </li>
+        <ol>
+        <li>Montevideo </li>
+        <li>Punta del Este </li>
+        </ol>
+        </ul>
+
+        <br>
+
+        <p>  Esta sería la estructura general de una línea de código en lenguaje HTML: <br>
+        <etiqueta atributo1="valor1" atributo2="valor2">contenido</etiqueta> </p>
+
+        <br>
+        
+        <p> Veamos un ejemplo con un enlace al home de EggEducación: </p>
+
+        <a href="https://eggeducacion.com/es-AR/">Home de EggEducación</a>
+
+        <a href="http://www.enlace.com" target="_blank">Ejemplo de enlace</a>
+
+        <p> 1) Para hacer un enlace a index.html desde index.html: </p>
+        <a href="index.html">Ir a index.html</a>    
+        
+        <p> 2) Para hacer un enlace desde index.html hacia pagina1.html: </p>
+        <a href="seccion1/paginas/pagina1.html">Ir a pagina1.html</a>
+        
+        <p> 3) Para hacer un enlace desde pagina2.html hacia pagina1.html: </p>
+        <a href="../seccion1/paginas/pagina1.html">Ir (también) a pagina1.html</a>
+        
+        <p> 4) Para hacer un enlace desde pagina1.html hacia pagina2.html: </p>
+        <a href="../../seccion2/pagina2.html">Ir ahora a pagina2.html</a>
+
+        <br>
+
+        <H4><U> TABLAS EN HTML: </U></H4>
+
+        <table>
+            <tr>
+            <td> Celda 1, línea 1 </td>
+            <td> Celda 2, línea 1 </td>
+            </tr>
+            <tr>
+            <td> Celda 1, línea 2 </td>
+            <td> Celda 2, línea 2 </td>
+            </tr>
+            </table>
+           
+        <p>
+        
+            También existe la etiqueta <th> (table header), que sirve para crear una celda cuyo contenido esté 
+        formateado como un título o cabecera de la tabla. En la práctica, lo que hace es poner en negrita y 
+        centrado el contenido de esa celda. <br>
+            
+        </p>
+            
+        <br>
+
+        <table>
+            <tr>
+            <th>Titulo Celda 1</th>
+            <th> Titulo Celda 2</th>
+            </tr>
+            <tr>
+            <td>Celda 1, línea 1</td>
+            <td> Celda 2, línea 1</td>
+            </tr>
+            <tr>
+            <td> Celda 1, línea 2</td>
+            <td> Celda 2, línea 2</td>
+            </tr>
+            </table>    
+        
+        <br>
+        
+        <H4><U> FORMULARIOS EN HTML: </U></H4>
+
+        <p>Entonces con todo lo anterior ya explicado, la etiqueta "form" con los atributos nos quedaría así: </p>
+            
+            <form action="/my-handling-form-page" method="post">
+                <ul>
+                  <li>
+                    <label for="name">Nombre y Apellido:</label> <br>
+                    <input type="text" id="name" name="user_name" /> 
+                  </li>
+                  <li>
+                    <label for="mail">Correo electrónico:</label> <br>
+                    <input type="email" id="mail" name="user_mail" /> 
+                  </li>
+                  <li>
+                    <label for="msg">Mensaje:</label> <br>
+                    <textarea id="msg" name="user_message"></textarea> 
+                  </li>
+                </ul>
+            </form>  
+            
+            <br>
+            
+        <strong>  Entre esta etiqueta y su cierre colocaremos el resto de las etiquetas que darán forma a nuestro formulario. </strong>
+        
+        <br>
+
+        <H4><U> ATRIBUTOS PRESINDIBLES: </U></H4>
+
+        <p> Size: define el tamaño de la caja de texto, en número de caracteres visibles. Si al escribir el usuario 
+        llega al final de la caja, el texto que escriba a continuación también cabrá dentro del campo, pero 
+        irá corriéndose a medida que se escribe, haciendo desaparecer la parte de texto que queda a la 
+        izquierda. <br>
+
+        <br>
+
+            Maxlength: indica el tamaño máximo del texto, en número de caracteres, que puede ser escrito en
+        el campo. En caso de que el campo de texto tenga definido el atributo maxlength, el navegador no
+        permitirá escribir más caracteres en ese campo que los que hayamos indicado. <br>
+        
+        <br>
+        
+            Value: en algunos casos puede resultarnos interesante asignar un valor predefinido al campo en 
+        cuestión. Esto puede ayudar al usuario a rellenar más rápidamente el formulario o darle alguna 
+        idea sobre la naturaleza de datos que se requieren. Este valor inicial del campo puede ser 
+        expresado mediante el atributo value. <br></p>
+
+        <br>
+
+        <input type="text" name="instituto" value="Egg Educación">
+
+        <br>
+
+        <p> placeholder: este atributo especifica una pequeña pista que describe el valor esperado para el 
+        campo (input). <br>
+            La pequeña sugerencia se muestra en el campo de entrada antes de que el usuario ingrese un 
+        valor. Una vez que escriba, ese valor va a desaparecer.  </p>
+
+        <br>
+
+        <form>
+        
+            <input type="text" name="instituto" value="Egg Educación">
+        
+        </form>
+
+        <H4><U> ETIQUETA TEXTAREA PARA TEXTO LARGO: </U></H4>
+
+        <p> Si deseamos poner a disposición del usuario un campo de texto donde pueda escribir 
+        cómodamente sobre un espacio compuesto de varias líneas, hemos de invocar una nueva
+        etiqueta: "textarea" y su cierre correspondiente.</p>
+
+        <br>
+
+        • rows: define el número de líneas del campo de texto. <br>
+        • cols: define el número de columnas del campo de texto. <br>
+
+        <br>
+
+        <textarea name="comentario" rows="10" cols="40">Escribe tu comentario...</textarea> <br>
+
+        <H4><U> ETIQUETA LABEL: </U></H4>
+        
+            <p>  El elemento <label> y su etiqueta de cierre, provee una descripción corta que acompaña al campo
+        de texto. Su función es indicarle al usuario que información debería ingresar en el campo o input.
+        También podemos asociar una etiqueta label a un campo para que el usuario pueda acceder al
+        campo de texto con solo clickear el label. <br>
+        
+        </p> 
+        
+        <P> La etiqueta podría verse de esta forma: </P>
+        <label>Nombre del Usuario</label> 
+        <input type="text" name="nombre"> <br>  
+
+        <br>
+
+        <p> 
+        La manera que asociamos un label a un input es la siguiente: <br>
+                
+        <br>
+
+        • En la etiqueta label agregaremos un atributo <strong>for</strong> con un valor, este va a representar el dato que se va a ingresar en el <strong>input</strong>. <br>
+                
+        <br>
+
+        • En el <strong>input</strong> vamos a poner el mismo valor, pero en el <strong>atributo ID</strong>.  <br>
+        
+        </p>
+
+        <br>
+
+        <label for="nombre">Nombre del Usuario</label> 
+        <input type="text" id="nombre" name="nombre"> <br>
+
+        <br>
+
+        <H4><u>LISTAS DE OPCIONES: </u></H4>
+
+        <br>
+
+        <p>
+                
+            Size: indica el número de valores mostrados a la vez en la lista. Lo típico es que no se incluya
+        ningún valor en el atributo size, en ese caso tendremos un campo de opciones desplegable, pero
+        si indicamos un valor para el atributo size aparecerá un campo donde veremos las opciones
+        definidas por size y el resto podrán ser vistos por medio de la barra lateral de desplazamiento. <br>
+            
+        <br>
+
+            Multiple: permite la selección de más elementos de la lista. Este atributo se expresa sin valor
+        alguno, es decir, no se utiliza con el igual, simplemente se pone para conseguir el efecto, o no se
+        pone si queremos una lista desplegable común. <br>
+            
+        </p>
+
+        <br>
+
+        <select name="Estaciones" size="3" multiple>
+            <option>Primavera</option>
+            <option>Verano</option>
+            <option>Otoño</option>
+            <option>Invierno</option>
+        </select>
+
+        <br>  
+            
+        <p><strong> Otra manera "tipo opción desplegable", seria la siguiente: </strong><br></p>
+
+        <br>
+
+        <select name="estacion">
+            <option>Primavera</option>
+            <option>Verano</option>
+            <option>Otoño</option>
+            <option>Invierno</option>
+        </select>
+
+        <br>
+
+        <H4><u>BOTONES DE RADIO: </u></H4>
+
+        <input type="radio" name="estacion" value="1">Primavera
+            <br>
+        <input type="radio" name="estacion" value="2">Verano
+            <br>
+        <input type="radio" name="estacion" value="3">Otoño
+            <br>
+        <input type="radio" name="estacion" value="4">Invierno
+
+        <br>
+        <br>
+
+        <Strong> <i> Si se quisiera que sea un "chekbox" caja de validacion, debería ser de la siguiente manera: </i> </Strong> <br>
+
+        <br>
+
+        <input type="checkbox" name="estacion" value="1">Primavera
+            <br>
+        <input type="checkbox" name="estacion" value="2">Verano
+            <br>
+        <input type="checkbox" name="estacion" value="3">Otoño
+            <br>
+        <input type="checkbox" name="estacion" value="4">Invierno
+
+        <br>
+
+        <H4><u> EJEMPLO COMPLETO DE FORMULARIO EN HTML: </u></H4>
+
+        <p> Ya hemos visto todo lo respectivo a formularios. Pasemos ahora a ejemplificar todo lo aprendido a
+        partir de la creación de un formulario. <br>
+            Si tienes alguna duda, te recomendamos complementar el aprendizaje con los videos respectivos. <br>
+        </p>
+
+        <form action="ruta del método que va a manejar la información" method="POST"
+        enctype="multipart/form-data"></form>
+        <label>Nombre del usuario</label> <br>
+        <input type="text" name="nombre"> <br>
+        <label>Edad del usuario</label> <br>
+        <input type="number" name="edad "> <br>
+        <label>Fecha de nacimiento del usuario</label> <br>
+        <input type="date” name="fechanac"> <br>
+        <label>Sexo del usuario</label> <br>
+        <input type="radio" name="sexo" value="Hombre"> Hombre <br>
+        <input type="radio" name="sexo" value="Mujer"> Mujer <br>
+        <label>País nacimiento del usuario</label> <br>
+        <select name="pais">
+        <option>Argentina</option>
+        <option>Brasil</option>
+        <option>Chile</option>
+        <option>Uruguay</option>
+        </select>
+        <br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+
+        <br>
+
+        <H4><u>ETIQUETA DIV: </u></H4>
+
+        <p> Supongamos que tenemos 3 párrafos que queremos alinear a la izquierda, esto recordemos lo
+        haríamos con el atributo align. <br> 
+        
+        <br>
+
+        Crearíamos algo así: <br>
+        </p>
+
+        <strong>Manera numero 1: </strong>
+
+        <p align="left">Párrafo 1</p>
+        <p align="left">Párrafo 2</p>
+        <p align="left">Párrafo 3</p>
+
+        <br>
+
+        <strong>Manera número 2: </strong>
+
+        <div align="left">
+        <p>Párrafo 1</p>
+        <p>Párrafo 2</p>
+        <p>Párrafo 3</p>
+        </div>
+
+        <br>
+
+        <H4><U> ETIQUETA SPAN: </U></H4> <!--Esto es CSS, pero como no lo hace declarar como tal, lo agrege en el archivo HTML-->
+
+        <P> En el siguiente caso vemos que tenemos un párrafo donde necesitamos agregar estilos para una
+        palabra. Por lo que agregaremos una etiqueta span para poder implementar ese estilo deseado. <br>
+        </P>
+
+        <H1><strong>Yo estudio en <span style="color: yellow">Egg</span>, Programación FullStack. </strong></H1>
+
+        <br>
+        <br>
+        <br>
+
+    </ul>
+</ul>
+
+</body>
+</html>
