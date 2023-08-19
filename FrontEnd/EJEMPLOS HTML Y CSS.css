@@ -24,10 +24,12 @@
 
     */
 
-    p {
+        p {
         font-size: 0.42333328cm;
         font-family: arial, helvetica;
         font-weight: normal;
+        text-align: left;
+        color:blue;
         }
         h1 {
         font-size: 1.26999984cm;

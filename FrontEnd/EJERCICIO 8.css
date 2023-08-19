@@ -1,0 +1,37 @@
+    
+    p {
+    font-size: 0.42333328cm;
+    font-family: arial, helvetica;
+    font-weight: normal;
+    text-align: left;
+    color:blue;
+    }
+    h1 {
+    font-size: 1.26999984cm;
+    font-family: verdana, arial;
+    text-decoration: underline;
+    /*text-align: center;
+    background-color: Teal;*/
+    }
+    body {
+    background-color:rgba(202, 202, 202, 0.685);
+    font-family: arial;
+    color: rgb(3, 3, 3);
+    }
+
+    /* Estilo para enlaces normales */
+a {
+    color: #CC0000; /* Color de letra rojo */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilo para enlaces al pasar el ratón */
+a:hover {
+    background-color: #CC0000; /* Color de fondo rojo */
+    color: #FFF; /* Color de letra blanco */
+}
+
+/* Estilo para enlaces visitados */
+a:visited {
+    color: #ccc; /* Color de letra gris claro */
+}

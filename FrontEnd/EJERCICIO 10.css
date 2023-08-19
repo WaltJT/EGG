@@ -1,0 +1,40 @@
+
+body{
+margin: 0;
+padding: 0;
+/*background-color: black;
+box-sizing: border-box;
+animation: BGcolorChanging-6colors 5s linear infinite alternate both;
+*/
+background: grey;
+}
+
+/*
+@keyframes BGcolorChanging-6colors {
+
+    0%{
+        background: grey;
+    }
+
+    20%{
+        background: orange;
+    }
+
+    40%{
+        background: red;
+    }
+
+    60%{
+        background: rgb(109, 0, 0);
+    }
+
+    80%{
+        background: rgb(110, 122, 0);
+    }
+
+    100%{
+        background: rgb(207, 207, 207);
+    }
+
+}
+*/
