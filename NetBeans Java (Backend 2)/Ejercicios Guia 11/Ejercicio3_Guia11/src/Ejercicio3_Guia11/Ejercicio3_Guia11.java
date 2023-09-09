@@ -73,6 +73,8 @@ public class Ejercicio3_Guia11 {
         
         }
 
+        System.out.println("Cartas disponibles: " + baraja.cartasDisponibles());
+        
     }
  
 }

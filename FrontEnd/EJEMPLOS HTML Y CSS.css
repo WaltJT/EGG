@@ -1,0 +1,45 @@
+    
+    /*
+    
+    Esto es busqueda personal no esta en el manual de EGG
+        
+    html {height: 100%;}body {background-color: rgba(202, 202, 202, 0.685);}  
+    
+    Con esto se modifica el color de fondo del HTML 
+
+    
+    H1{
+        font-size: 3rem; Esto le da tamaño de letra a H1
+    }
+
+    
+
+    H4{
+        font-size: 1.5rem; Esto le da tamaño de letra a H4       
+    }
+
+    p{
+        font-size: 1rem; Esto le da tamaño de letra a P
+    }
+
+    */
+
+        p {
+        font-size: 0.42333328cm;
+        font-family: arial, helvetica;
+        font-weight: normal;
+        text-align: left;
+        color:blue;
+        }
+        h1 {
+        font-size: 1.26999984cm;
+        font-family: verdana, arial;
+        text-decoration: underline;
+        /*text-align: center;
+        background-color: Teal;*/
+        }
+        body {
+        background-color:rgba(202, 202, 202, 0.685);
+        font-family: arial;
+        color: rgb(3, 3, 3);
+        }
